@@ -49,6 +49,15 @@ Note in the sql_queries file how the staging tables don't require primary keys o
 But the dimensional tables do need to respect the data types of the loaded information.
 See attached star schema (ERD for Sparkify.pdf) for a graphical representation.
 
+### Explanation of the files in the repository
+2 datasets are located in the S3 buckets
+Where the files are in JSON format and contains metadata about a song and the artist of that song:
+Song data: s3://udacity-dend/song_data
+Log data: s3://udacity-dend/log_data
+
+The Log dataset consists of log files in JSON format, this simulates app activity logs from the imaginary music streaming app Sparkify based on configuration settings. The log files in the dataset you'll be working with are partitioned by year and month:
+Log data json path: s3://udacity-dend/log_json_path.json
+
 # License
 Please feel free to base your work from this open repository, provide credit where appropriate.
 
