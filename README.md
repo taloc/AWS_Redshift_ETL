@@ -42,6 +42,12 @@ The Redshift IAM role and cluster details can be launched programmatically or ma
 - create_tables.py
 - etl.py
 
+### Database schema
+The transformation of data into a star schema has the purpose to facilitate the analysis of the data in the JSON files.
+See attached star schema
+
+
+
 # License
 Please feel free to base your work from this open repository, provide credit where appropriate.
 
