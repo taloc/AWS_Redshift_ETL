@@ -41,12 +41,13 @@ The Redshift IAM role and cluster details can be launched programmatically or ma
 - sql_queries.py
 - create_tables.py
 - etl.py
+- ERD for Sparkify.pdf
 
 ### Database schema
 The transformation of data into a star schema has the purpose to facilitate the analysis of the data in the JSON files.
-See attached star schema
-
-
+Note in the sql_queries file how the staging tables don't require primary keys or specific constraints.
+But the dimensional tables do need to respect the data types of the loaded information.
+See attached star schema (ERD for Sparkify.pdf) for a graphical representation.
 
 # License
 Please feel free to base your work from this open repository, provide credit where appropriate.
