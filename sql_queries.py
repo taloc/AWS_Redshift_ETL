@@ -67,12 +67,12 @@ year INT
 
 songplay_table_create = ("""
 CREATE TABLE IF NOT EXISTS songplays(
-songplay_id INT,
+songplay_id INT IDENTITY(0,1) PRIMARY KEY,
 start_time TIMESTAMP NOT NULL,
 user_id INT NOT NULL,
 level VARCHAR NOT NULL,
-song_id VARCHAR NOT NULL,
-artist_id VARCHAR NOT NULL,
+song_id VARCHAR NOT NULL DISTKEY,
+artist_id VARCHAR NOT NULL SORTKEY,
 session_id INT NOT NULL,
 location VARCHAR NOT NULL,
 user_agent VARCHAR NOT NULL
@@ -81,7 +81,7 @@ user_agent VARCHAR NOT NULL
 
 user_table_create = ("""
 CREATE TABLE IF NOT EXISTS users (
-user_id INT NOT NULL,
+user_id INT PRIMARY KEY NOT NULL SORTKEY,
 first_name VARCHAR NOT NULL,
 last_name VARCHAR NOT NULL,
 gender CHAR NOT NULL,
@@ -91,9 +91,9 @@ level VARCHAR NOT NULL
 
 song_table_create = ("""
 CREATE TABLE IF NOT EXISTS songs (
-song_id VARCHAR NOT NULL,
+song_id VARCHAR PRIMARY KEY NOT NULL DISTKEY,
 title VARCHAR NOT NULL,
-artist_id VARCHAR NOT NULL,
+artist_id VARCHAR NOT NULL SORTKEY,
 year INT NOT NULL,
 duration FLOAT NOT NULL
 );
@@ -102,7 +102,7 @@ duration FLOAT NOT NULL
 # Notice that location, latitude and longitude can be null values
 artist_table_create = ("""
 CREATE TABLE IF NOT EXISTS artists (
-artist_id VARCHAR NOT NULL,
+artist_id VARCHAR NOT NULL PRIMARY KEY SORTKEY,
 name VARCHAR NOT NULL,
 location VARCHAR,
 latitude NUMERIC,
@@ -112,7 +112,7 @@ longitude NUMERIC
 
 time_table_create = ("""
 CREATE TABLE IF NOT EXISTS time (
-start_time TIMESTAMP NOT NULL,
+start_time TIMESTAMP PRIMARY KEY NOT NULL SORTKEY,
 hour INT NOT NULL,
 day INT NOT NULL,
 week INT NOT NULL,
