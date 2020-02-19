@@ -73,3 +73,5 @@ https://docs.aws.amazon.com/redshift/latest/dg/copy-usage_notes-copy-from-json.h
 Common pitfalls using RedShift (NOT NULL)
 https://heap.io/blog/engineering/redshift-pitfalls-avoid
 
+How to use DISTKEY and SORTKEY:
+https://popsql.com/learn-sql/redshift/how-to-use-distkey-sortkey-and-define-column-compression-encoding-in-redshift/
