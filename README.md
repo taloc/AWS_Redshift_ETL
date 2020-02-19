@@ -49,6 +49,11 @@ Note in the sql_queries file how the staging tables don't require primary keys o
 But the dimensional tables do need to respect the data types of the loaded information.
 See attached star schema (ERD for Sparkify.pdf) for a graphical representation.
 
+### Distribution strategy (DISTKEY and SORTKEY)
+I have used a DISTKEY for song_id (as it seems that it will be a frequently joined field) in the tables songplays and songs
+SORTKEY was used in all 5 tables for the fields: artist_id, user_id, start_time
+Finally, I marked in the dimensional tables the PRIMARY KEYs for users to be able to use the dimensional tables once loaded.
+
 ### Explanation of the files in the repository
 2 datasets are located in the S3 buckets
 Where the files are in JSON format and contains metadata about a song and the artist of that song:
